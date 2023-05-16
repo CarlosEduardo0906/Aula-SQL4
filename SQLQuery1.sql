@@ -62,3 +62,38 @@
 --			END
 --		CLOSE cursor1
 --		DEALLOCATE cursor1
+
+
+
+
+-------------------------- Modo de AUTO CONFIRMAÇÃO
+
+
+--CREATE DATABASE teste
+--GO
+--CREATE TABLE agenda(Codigo INTEGER IDENTITY PRIMARY KEY,
+--					Nome VARCHAR(50) NOT NULL,
+--					FONE CHAR(10) NOT NULL)
+
+--INSERT INTO agenda (Nome, Fone)
+--			VALUES ('Teste 1', '1111-1111')
+
+--SELECT * FROM agenda
+
+
+
+
+--SET IMPLICIT_TRANSACTIONS OFF
+--BEGIN TRANSACTION
+--INSERT INTO agenda (Nome, FONE)
+--VALUES ('Teste1','1111-1111')
+--IF @@ERROR = 0
+--BEGIN
+--		COMMIT TRANSACTION
+--		PRINT 'Commit executado!'
+--	END
+--ELSE
+--	BEGIN
+--		ROLLBACK TRANSACTION
+--		PRINT 'Rollback executado!'
+--		END
